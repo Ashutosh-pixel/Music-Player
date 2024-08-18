@@ -1,0 +1,19 @@
+.category {
+  display: flex;
+  grid-gap: 5rem;
+  width: 60%;
+  margin-left: 2rem;
+}
+
+#categoryitem1 {
+  font-size: 1.2rem;
+}
+#categoryitem1:hover {
+  cursor: pointer;
+}
+#categoryitem2 {
+  font-size: 1.2rem;
+}
+#categoryitem2:hover {
+  cursor: pointer;
+}

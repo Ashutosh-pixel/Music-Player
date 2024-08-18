@@ -1,0 +1,51 @@
+/* style/SongItem.css */
+.song-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    padding 0.3s ease; /* Added smooth transition for all properties */
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px; /* Smooth rounded corners */
+}
+
+.song-item:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slightly brighter background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+  padding: 10px 15px; /* Smoothly transition padding to create a subtle movement */
+}
+
+.album-art {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.song-info {
+  flex-grow: 1;
+}
+
+.song-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.song-artist {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.song-duration {
+  font-size: 14px;
+  color: #aaa;
+}
