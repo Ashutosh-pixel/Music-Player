@@ -20,7 +20,8 @@
     0.1
   ); /* Slightly brighter background on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
-  padding: 10px 15px; /* Smoothly transition padding to create a subtle movement */
+  padding: 10px 15px;
+  transition: background-color 0.5s, box-shadow 0.5s, padding 0.5s;
 }
 
 .album-art {

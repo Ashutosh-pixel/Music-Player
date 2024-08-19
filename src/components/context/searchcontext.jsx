@@ -3,9 +3,10 @@ import { createContext, useState } from "react";
 export const MyContext = createContext(null);
 
 const SearchProvider = ({ children }) => {
-  const [searchsong, setSearchsong] = useState(null);
+  const [searchsong, setSearchsong] = useState("");
   const [foryou, setForYou] = useState(true);
   const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSong, setSelectedSong] = useState({});
 
   return (
     <MyContext.Provider
@@ -16,6 +17,8 @@ const SearchProvider = ({ children }) => {
         setForYou,
         selectedColor,
         setSelectedColor,
+        selectedSong,
+        setSelectedSong,
       }}
     >
       {children}
