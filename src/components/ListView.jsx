@@ -44,6 +44,8 @@ export default function ListView() {
             duration={"4:16"}
             accent={value.accent}
             songindex={index}
+            songurl={value.url}
+            songid={value.id}
           />
         ))
       )}

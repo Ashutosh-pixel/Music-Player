@@ -2,7 +2,16 @@ import React, { useContext, useEffect } from "react";
 import "./style/SongItem.css";
 import { MyContext } from "./context/searchcontext";
 
-const SongItem = ({ albumArt, title, artist, duration, accent, songindex }) => {
+const SongItem = ({
+  albumArt,
+  title,
+  artist,
+  duration,
+  accent,
+  songindex,
+  songurl,
+  songid,
+}) => {
   const { selectedColor, setSelectedColor } = useContext(MyContext);
   const { selectedSong, setSelectedSong } = useContext(MyContext);
   let song = {
@@ -12,12 +21,14 @@ const SongItem = ({ albumArt, title, artist, duration, accent, songindex }) => {
     duration: duration,
     accent: accent,
     songindex: songindex,
+    songurl: songurl,
+    songid: songid,
   };
 
   const handleClick = () => {
     setSelectedColor(accent);
     setSelectedSong(song);
-    console.log(selectedSong);
+    // console.log(selectedSong);
   };
 
   return (

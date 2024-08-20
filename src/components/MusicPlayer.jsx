@@ -1,6 +1,7 @@
 import React from "react";
 import PlayerSongDetails from "./PlayerSongDetails";
 import PlayerCoverImage from "./PlayerCoverImage";
+import Controls from "./Controls";
 
 export default function MusicPlayer() {
   return (
@@ -9,6 +10,7 @@ export default function MusicPlayer() {
       <div id="coverimage">
         <PlayerCoverImage />
       </div>
+      <Controls />
     </div>
   );
 }

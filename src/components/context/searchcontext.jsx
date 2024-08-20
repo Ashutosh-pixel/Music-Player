@@ -7,6 +7,8 @@ const SearchProvider = ({ children }) => {
   const [foryou, setForYou] = useState(true);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSong, setSelectedSong] = useState({});
+  const [playlist, setPlaylist] = useState([]);
+  const [dummyplaylist, setDummyPlaylist] = useState([]);
 
   return (
     <MyContext.Provider
@@ -19,6 +21,10 @@ const SearchProvider = ({ children }) => {
         setSelectedColor,
         selectedSong,
         setSelectedSong,
+        playlist,
+        setPlaylist,
+        dummyplaylist,
+        setDummyPlaylist,
       }}
     >
       {children}
