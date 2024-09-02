@@ -1,9 +1,20 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { MyContext } from "./context/searchcontext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCirclePause,
+  faCirclePlay,
+} from "@fortawesome/free-regular-svg-icons";
+import { faBackward } from "@fortawesome/free-solid-svg-icons/faBackward";
+import { faForward } from "@fortawesome/free-solid-svg-icons/faForward";
+import ProgressBar from "./ProgressBar";
 
 export default function Controls() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const { playlist } = useContext(MyContext);
   const { selectedSong, setSelectedSong } = useContext(MyContext);
@@ -19,6 +30,20 @@ export default function Controls() {
       }
       if (isPlaying) {
         audioRef.current.play();
+      }
+
+      //
+      if (audioRef.current) {
+        audioRef.current.addEventListener("loadedmetadata", () => {
+          setDuration(audioRef.current.duration);
+        });
+        audioRef.current.addEventListener("timeupdate", () => {
+          setCurrentTime(audioRef.current.currentTime);
+        });
+
+        audioRef.current.addEventListener("ended", () => {
+          NextSongHandler();
+        });
       }
     }
     console.log("audioref", audioRef.current.src);
@@ -89,11 +114,35 @@ export default function Controls() {
   }
 
   return (
-    <div>
+    <div className="controlparent flex">
       <audio ref={audioRef} src=""></audio>
-      <button onClick={SongPlayHandler}>play</button>
-      <button onClick={PrevSongHandler}>prev</button>
-      <button onClick={NextSongHandler}>next</button>
+      <ProgressBar currentTime={currentTime} duration={duration} />
+      <div className="controlbuttons flex">
+        <FontAwesomeIcon
+          id="controlbutton"
+          onClick={PrevSongHandler}
+          icon={faBackward}
+          bounce={!isPlaying}
+          size="2xl"
+          style={{ color: "#ffffff" }}
+        />
+        <FontAwesomeIcon
+          id="controlbutton"
+          onClick={SongPlayHandler}
+          icon={isPlaying ? faCirclePause : faCirclePlay}
+          spin={isPlaying}
+          size="2xl"
+          style={{ color: "#ffffff" }}
+        />
+        <FontAwesomeIcon
+          id="controlbutton"
+          onClick={NextSongHandler}
+          bounce={!isPlaying}
+          icon={faForward}
+          size="2xl"
+          style={{ color: "#ffffff" }}
+        />
+      </div>
     </div>
   );
 }

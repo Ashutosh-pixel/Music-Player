@@ -10,13 +10,13 @@ export default function NavBar() {
       <span>
         <FontAwesomeIcon
           icon={faSpotify}
-          style={{ color: "#292929" }}
+          style={{ color: "#ffffff" }}
           size="2xl"
         />
       </span>
       <span id="spotify">Spotify</span>
       <span id="profile">
-        <FontAwesomeIcon icon={faUser} size="xl" style={{ color: "#292929" }} />
+        <FontAwesomeIcon icon={faUser} size="xl" style={{ color: "#ffffff" }} />
       </span>
     </div>
   );
