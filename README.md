@@ -3,7 +3,7 @@
 This is a web-based music player that mimics the core functionalities of Spotify. It fetches music and related details from an API, allowing users to play, pause, skip to the next or previous track, and manage playlists. The intuitive interface provides a seamless music streaming experience with responsive controls and playlist management features.
 
 Demo 
-![Demo](https://github.com/user-attachments/assets/1968d971-34c8-4646-86cb-22a6dda19e67)    ![link](https://music-player-dev-delta.vercel.app/)
+![Demo](https://github.com/user-attachments/assets/1968d971-34c8-4646-86cb-22a6dda19e67)    [Demo](https://music-player-dev-delta.vercel.app/)
 
 
 
